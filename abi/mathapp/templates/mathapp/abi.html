@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>Mileage Calculator</title>
+    <style>
+        body 
+        {
+            background: linear-gradient(90deg,plum,maroon,rgb(54, 1, 1));
+        }
+        .id1 
+        {
+            text-align: center;
+            color: rgb(62, 65, 128);
+        }
+        .box 
+        {
+            text-align: center;
+            width: 25%;
+            background-color: whitesmoke;
+            border: inset 8px rgb(0, 5, 11);
+            padding: 20px;
+            margin: 100px auto;
+            border-radius: 13px;
+        }
+        .result 
+        {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="id1"><b><font color="black">Mileage Efficiency</font></b></h1>
+    <div class="box">
+        <h2><u>Calculator</u></h2>
+        <h2><font color="red">ABINITHI(25009178)</font></h2>
+
+        <form method="post">
+            {% csrf_token %}
+            <label>Distance:</label><br>
+            <input type="number" name="distance"> km<br><br>
+
+            <label>Liters:</label><br>
+            <input type="number" name="liters"> L<br><br>
+
+            <button type="submit">Calculate</button>
+            <br><br>
+            <label>Mileage:</label><br>
+            <input class='result' type="number" name="Mileage" value="{{miles}}">Km/L
+        </form>
+    </div>
+</body>
+</html>
